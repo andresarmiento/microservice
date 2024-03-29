@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  microservicecontainer:
+    image: ${DOCKER_REGISTRY-}microservicecontainer
+    build:
+      context: .
+      dockerfile: MicroServiceContainer/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80

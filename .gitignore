@@ -1,0 +1,12 @@
+
+.vs/*
+
+Dominio.Aplicacion/bin/
+Dominio.Aplicacion/obj/
+Dominio.Infraestructura/bin/
+Dominio.Infraestructura/obj/
+Dominio.Model/bin/
+Dominio.Model/obj/
+MicroServiceContainer/bin/
+MicroServiceContainer/obj/
+obj/
