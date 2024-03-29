@@ -1,6 +1,7 @@
 ﻿using Dominio.Aplicacion.Interfaces;
 using Dominio.Infraestructura.Context;
 using Dominio.Model.Model;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,28 +12,55 @@ namespace Dominio.Aplicacion.Services
 {
     public class userService : IUserService
     {
-        readonly MysqlContext _context;
+        private readonly MysqlContext _context;
+
         public userService(MysqlContext dbcontext)
         {
             _context = dbcontext;
         }
 
-        public int create(user dto) { 
-        
-            _context.user.Add(dto);
-            var result = _context.SaveChanges();
+        public int create(user dto)
+        {
+            try
+            {
+                _context.user.Add(dto);
+                var result = _context.SaveChanges();
 
-            return result;
+                return result;
+            }
+            catch (Exception ex)
+            {
+                
+                throw ex;
+            }
+
         }
 
         public List<user> GetAll()
         {
-            return _context.user.ToList();
+            try
+            {
+                
+                return _context.user.ToList();
+
+            }
+            catch (Exception ex)
+            {
+                
+                throw ex;
+            }
         }
 
         public user GetById(int id)
         {
-            return _context.user.Where(x=> x.Id == id).FirstOrDefault();
+            try
+            {
+                return _context.user.Where(x => x.Id == id).FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
