@@ -15,11 +15,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 MysqlContext validate = new MysqlContext(builder.Configuration.GetConnectionString("ConexionDatabase"));
-if (!validate.Validate())
+/*if (!validate.Validate())
 {
     Console.Error.WriteLine("No se puede conectar a la base de datos");
     return;
-}
+}*/
 
 Console.WriteLine($"Inicia configuracion DB {builder.Configuration.GetConnectionString("ConexionDatabase")}");
 builder.Services.AddDbContext<MysqlContext>(
@@ -31,13 +31,6 @@ builder.Services.AddDbContext<MysqlContext>(
 
 
 builder.Services.AddScoped<IUserService, userService>();
-
-
-
-
-
-
-
 
 
 var app = builder.Build();
