@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Dominio.Model.Model
-{
+{  
     public  class user
     {
         [Key]
