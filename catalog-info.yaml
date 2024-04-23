@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: microservice
+  annotations:
+    github.com/project-slug: andresarmiento/microservice
+spec:
+  type: other
+  lifecycle: unknown
+  owner: guests
